@@ -1,6 +1,6 @@
 ﻿namespace ProvaPub.Models
 {
-	public class ProductList : ListBase
+	public class ProductList : ListBase<ProductList>
 	{
 		public ProductList()
 		{
@@ -8,5 +8,10 @@
         }
 
 		public List<Product> Products { get; set; }
-	}
+
+        public override string ToString()
+        {
+            return $"TotalCount - {base.TotalCount}\r\nHasNext - {base.HasNext.ToString()}\r\nCount - {Products.Count.ToString()}";
+        }
+    }
 }

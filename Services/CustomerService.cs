@@ -13,10 +13,12 @@ namespace ProvaPub.Services
 
         public CustomerList ListCustomers(int page)
         {
-            int totalCount = 10;
-            page = ((page > 0) ? page -= 1 : 0) * totalCount;
+            List<Customer> l = base.ListEntity<Customer>(page);
 
-            return new CustomerList() { HasNext = false, TotalCount = totalCount, Customers = _ctx.Customers.Skip(page).Take(totalCount).ToList() };
+            CustomerList c = new CustomerList();
+            base.ListList<CustomerList>(page);
+
+            return new CustomerList() { HasNext = false, TotalCount = 10, Customers = l };
         }
 
         public async Task<bool> CanPurchase(int customerId, decimal purchaseValue)

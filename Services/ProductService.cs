@@ -11,13 +11,14 @@ namespace ProvaPub.Services
 			base._ctx = ctx;
 		}
 
-		public ProductList  ListProducts(int page)
+		public ProductList ListProducts(int page)
 		{
-			int totalCount = 10;
-			page = ((page > 0) ? page -= 1 : 0) * totalCount;
+			List<Product> l = base.ListEntity<Product>(page);
 
-            return new ProductList() { HasNext = false, TotalCount = totalCount, Products = _ctx.Products.Skip(page).Take(totalCount).ToList() };
+			ProductList p = new ProductList();
+            base.ListList<ProductList>(page);
+
+            return new ProductList() { HasNext = false, TotalCount = 10, Products = l };
         }
-
 	}
 }
