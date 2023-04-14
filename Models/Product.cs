@@ -1,13 +1,10 @@
 ﻿namespace ProvaPub.Models
 {
-	public class Product
-	{
-		public int Id { get; set; }
-		public string Name { get; set; }
-
-        public override string ToString()
+	public class Product : BaseEntityName
+    {
+		public override string ToString()
         {
-            return $"{Id} - {Name}";
+            return $"{base.Id} - {base.Name}";
         }
     }
 }
