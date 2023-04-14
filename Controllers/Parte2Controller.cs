@@ -5,7 +5,6 @@ using ProvaPub.Services;
 
 namespace ProvaPub.Controllers
 {
-	
 	[ApiController]
 	[Route("[controller]")]
 	public class Parte2Controller :  ControllerBase
@@ -31,15 +30,15 @@ namespace ProvaPub.Controllers
         }
 	
 		[HttpGet("products")]
-		public ProductList ListProducts(int page)
+		public BaseList ListProducts(int page)
 		{
-			return _productService.ListProducts(page);
+			return _productService.List<Product>(page, 10);
 		}
 
 		[HttpGet("customers")]
-		public CustomerList ListCustomers(int page)
+		public BaseList ListCustomers(int page)
 		{
-			return _customerService.ListCustomers(page);
+			return _customerService.List<Customer>(page, 10);
 		}
 	}
 }

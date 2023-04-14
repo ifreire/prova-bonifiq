@@ -11,6 +11,5 @@
 		{
 			return new Random(seed).Next(100);
 		}
-
 	}
 }
