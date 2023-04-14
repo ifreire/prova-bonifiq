@@ -15,7 +15,7 @@ namespace ProvaPub.Services
             List<Customer> list = base.ListEntity<Customer>(page);
 
             CustomerList c = new CustomerList();
-            base.ListList<CustomerList>(page);
+            base.ListList(page);
 
             return new CustomerList() { HasNext = false, TotalCount = list.Count, Customers = list };
         }

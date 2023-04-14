@@ -1,6 +1,6 @@
 ﻿namespace ProvaPub.Models
 {
-	public class ProductList : ListBase<ProductList>
+	public class ProductList : ListBase
 	{
 		public ProductList()
 		{

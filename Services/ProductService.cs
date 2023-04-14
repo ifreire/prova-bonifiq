@@ -15,7 +15,7 @@ namespace ProvaPub.Services
 			List<Product> list = base.ListEntity<Product>(page);
 
 			ProductList p = new ProductList();
-            base.ListList<ProductList>(page);
+            base.ListList(page);
 
             return new ProductList() { HasNext = false, TotalCount = list.Count, Products = list };
         }

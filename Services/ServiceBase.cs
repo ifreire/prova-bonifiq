@@ -20,10 +20,10 @@ namespace ProvaPub.Services
             return result;
         }
 
-        public ListBase<ListType> ListList<ListType>(int page) where ListType : class
+        public ListBase ListList(int page)
         {
             int totalCount = 10;
-            ListBase<ListType> listBase = new ListBase<ListType>();
+            ListBase listBase = new ListBase();
             listBase.TotalCount = totalCount;
             listBase.HasNext = false;
 
