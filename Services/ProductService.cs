@@ -4,13 +4,11 @@ using System.Collections.Generic;
 
 namespace ProvaPub.Services
 {
-	public class ProductService
-	{
-		TestDbContext _ctx;
-
+	public class ProductService : ServiceBase
+    {
 		public ProductService(TestDbContext ctx)
 		{
-			_ctx = ctx;
+			base._ctx = ctx;
 		}
 
 		public ProductList  ListProducts(int page)

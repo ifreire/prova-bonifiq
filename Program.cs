@@ -12,9 +12,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //builder.Services.AddSingleton<RandomService>();
+builder.Services.AddDbContext<TestDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ctx")));
 builder.Services.AddScoped<RandomService>();
-builder.Services.AddDbContext<TestDbContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("ctx")));
+builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<CustomerService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
