@@ -7,6 +7,11 @@ namespace ProvaPub.Services
     {
         protected TestDbContext _ctx;
 
+        public ServiceBase(TestDbContext ctx)
+        {
+            _ctx = ctx;
+        }
+
         public List<Entity> ListEntity<Entity>(int page, int totalCount = 10) where Entity : class
         {
             page = ((page > 0) ? page -= 1 : 0) * totalCount;

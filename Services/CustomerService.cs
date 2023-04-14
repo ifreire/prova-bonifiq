@@ -6,19 +6,18 @@ namespace ProvaPub.Services
 {
     public class CustomerService : ServiceBase
     {
-        public CustomerService(TestDbContext ctx)
+        public CustomerService(TestDbContext ctx) : base(ctx)
         {
-            base._ctx = ctx;
         }
 
         public CustomerList ListCustomers(int page)
         {
-            List<Customer> l = base.ListEntity<Customer>(page);
+            List<Customer> list = base.ListEntity<Customer>(page);
 
             CustomerList c = new CustomerList();
             base.ListList<CustomerList>(page);
 
-            return new CustomerList() { HasNext = false, TotalCount = 10, Customers = l };
+            return new CustomerList() { HasNext = false, TotalCount = list.Count, Customers = list };
         }
 
         public async Task<bool> CanPurchase(int customerId, decimal purchaseValue)
