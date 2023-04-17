@@ -32,13 +32,13 @@ namespace ProvaPub.Controllers
 		[HttpGet("products")]
 		public BaseList ListProducts(int page)
 		{
-			return _productService.List<Product>(page, 10);
-		}
+			return _productService.GetEntityList<Product>(page, 10);
+        }
 
 		[HttpGet("customers")]
 		public BaseList ListCustomers(int page)
 		{
-			return _customerService.List<Customer>(page, 10);
+			return _customerService.GetEntityList<Customer>(page, 10);
 		}
 	}
 }

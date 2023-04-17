@@ -21,7 +21,7 @@
 
         public override string ToString()
         {
-            return $"TotalCount - {base.TotalCount}\r\nHasNext - {base.HasNext}\r\nCount - {Customers.Count}";
+            return $"TotalCount {base.TotalCount} - HasNext {base.HasNext} - Count {Customers.Count}";
         }
     }
 }

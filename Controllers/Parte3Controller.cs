@@ -16,10 +16,10 @@ namespace ProvaPub.Controllers
 	[Route("[controller]")]
 	public class Parte3Controller :  ControllerBase
 	{
-		[HttpGet("orders")]
-		public async Task<Order> PlaceOrder(string paymentMethod, decimal paymentValue, int customerId)
-		{
-			return await new OrderService().PayOrder(paymentMethod, paymentValue, customerId);
-		}
+		//[HttpGet("orders")]
+		//public async Task<Order> PlaceOrder(string paymentMethod, decimal paymentValue, int customerId)
+		//{
+		//	return await new OrderService().PayOrder(paymentMethod, paymentValue, customerId);
+		//}
 	}
 }
